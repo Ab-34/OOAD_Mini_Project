@@ -16,6 +16,9 @@
                 </h3>
                 <h2 th:text="${recipe.recipeName}"></h2>
                 <h2><img th:src="${recipe.recipeImage}" width="200" /></h2>
+                
+                <a href="#" class="btn btn-light">Change Portion Size</a>
+                <a href="#" class="btn btn-light">Measurement Conversion</a>
                 <dl class="list">
                     <dt>Recipe</dt>
                     <dd th:text="${recipe.recipeDesc}"></dd>
