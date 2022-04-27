@@ -12,10 +12,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-            
         <style>
         body, html {height: 100%}
-        #navbar {font-family: "Amatic SC", sans-serif}
+        #topnav, h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
         .menu {display: none}
         .bgimg {
           background-repeat: no-repeat;
@@ -28,7 +27,7 @@
     </head>
     <body>
         <!-- Navbar (sit on top) -->
-        <div class="w3-top w3-hide-small">
+        <div class="w3-top w3-hide-small" id="topnav">
             <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
             <a href="/#" class="w3-bar-item w3-button">HOME</a>
             <a href="/#about" class="w3-bar-item w3-button">ABOUT</a>
@@ -40,9 +39,7 @@
         
         <div layout:fragment="content" class="row">
             <div class="col-xs-8 col-md-8 text-align-center">
-                <h3>
-                    <span class="w3-tag w3-xlarge"><a href="/create">Add Recipe</a></span > 
-                </h3> 
+                <br><br>
                 <h2>My Recipes</h2>
                 <div class="table-responsive">
                     <table class="table" id="recipe-table">
