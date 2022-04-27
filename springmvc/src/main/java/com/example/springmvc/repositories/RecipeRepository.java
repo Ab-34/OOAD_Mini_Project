@@ -4,13 +4,13 @@
  */
 package com.example.springmvc.repositories;
 
-import com.example.springmvc.models.Product;
+import com.example.springmvc.models.Recipe;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Abhijnya Bhat
  */
-public interface ProductRepository extends JpaRepository<Product,Long>{
-     Product findByProdName(final String prodName);
+public interface RecipeRepository extends JpaRepository<Recipe,Long>{
+    Recipe findByRecipeName(final String recipeName);
 }

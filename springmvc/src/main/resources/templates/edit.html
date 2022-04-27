@@ -12,27 +12,27 @@
         <div layout:fragment="content" class="row">
             <div class="col-xs-8 col-md-8">
                 <h3>
-                    <a href="/product" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Foods</a>
+                    <a href="/recipebook" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Foods</a>
                 </h3>
                 <h2>Edit Food</h2>
                 <form action="/update">
                     <div class="form-group">
                         <label for="email">Name of the food:</label>
-                        <input type="text" class="form-control" name="prodName" th:value="${product.prodName}" />
+                        <input type="text" class="form-control" name="recipeName" th:value="${recipe.recipeName}" />
                     </div>
                     <div class="form-group">
                         <label for="email">Recipe:</label>
-                        <textarea class="form-control" name="prodDesc" cols="60" rows="3" th:text="${product.prodDesc}"></textarea>
+                        <textarea class="form-control" name="recipeDesc" cols="60" rows="3" th:text="${recipe.recipeDesc}"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="email">Course:</label>
-                        <input type="text" class="form-control" name="prodPrice" th:value="${product.prodPrice}" />
+                        <input type="text" class="form-control" name="recipeCourse" th:value="${recipe.recipePrice}" />
                     </div>
                     <div class="form-group">
                         <label for="email">Provide the URL of image of food:</label>
-                        <input type="url" class="form-control" name="prodImage" th:value="${product.prodImage}" />
+                        <input type="url" class="form-control" name="recipeImage" th:value="${recipe.recipeImage}" />
                     </div>
-                    <input type="hidden" name="id" th:value="${product.id}" />
+                    <input type="hidden" name="id" th:value="${recipe.id}" />
                     <button type="submit" class="btn btn-success">Save Entry</button>
                 </form>
             </div>

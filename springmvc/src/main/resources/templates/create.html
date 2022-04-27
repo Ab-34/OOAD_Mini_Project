@@ -12,25 +12,25 @@
         <div layout:fragment="content" class="row">
             <div class="col-xs-8 col-md-8">
                 <h3>
-                    <a href="/product" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Back to Recipes</a>
+                    <a href="/recipebook" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Back to Recipes</a>
                 </h3>
                 <h2>Add a Recipe</h2>
                 <form action="/save">
                     <div class="form-group">
                         <label for="email">Name:</label>
-                        <input type="text" class="form-control" name="prodName" />
+                        <input type="text" class="form-control" name="recipeName" />
                     </div>
                     <div class="form-group">
                         <label for="email">Recipe:</label>
-                        <textarea class="form-control" name="prodDesc" cols="60" rows="3"></textarea>
+                        <textarea class="form-control" name="recipeDesc" cols="60" rows="3"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="email">Course:</label>
-                        <input typeZ="text" class="form-control" name="prodPrice" />
+                        <input typeZ="text" class="form-control" name="recipeCourse" />
                     </div>
                     <div class="form-group">
                         <label for="email">Provide the food image URL here :</label>
-                        <input type="url" class="form-control" name="prodImage" />
+                        <input type="url" class="form-control" name="recipeImage" />
                     </div>
                     <button type="submit" class="btn btn-success">Save Entry</button>
                 </form>

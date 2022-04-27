@@ -18,7 +18,7 @@
                 </h3> 
                 <h2>My Recipes</h2>
                 <div class="table-responsive">
-                    <table class="table" id="product-table">
+                    <table class="table" id="recipe-table">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -27,10 +27,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="product : ${products}">
-                                <td><a th:text="${product.prodName}" th:href="@{'/show/' + ${product.id}}"></a></td>
-                                <td th:text="${product.prodDesc}"></td>
-                                <td th:text="${product.prodPrice}"></td>
+                            <tr th:each="recipe : ${recipes}">
+                                <td><a th:text="${recipe.recipeName}" th:href="@{'/showrecipe/' + ${recipe.id}}"></a></td>
+                                <td th:text="${recipe.recipeDesc}"></td>
+                                <td th:text="${recipe.recipeCourse}"></td>
                             </tr>
                         </tbody>
                     </table>

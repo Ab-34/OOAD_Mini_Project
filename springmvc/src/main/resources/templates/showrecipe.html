@@ -12,20 +12,20 @@
         <div layout:fragment="content" class="row">
             <div class="col-xs-8 col-md-8">
                 <h3>
-                    <a href="/product" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> Food</a>
+                    <a href="/recipebook" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span>Go To Recipe</a>
                 </h3>
-                <h2 th:text="${product.prodName}"></h2>
-                <h2><img th:src="${product.prodImage}" width="200" /></h2>
+                <h2 th:text="${recipe.recipeName}"></h2>
+                <h2><img th:src="${recipe.recipeImage}" width="200" /></h2>
                 <dl class="list">
                     <dt>Recipe</dt>
-                    <dd th:text="${product.prodDesc}"></dd>
+                    <dd th:text="${recipe.recipeDesc}"></dd>
                     <dt>Course</dt>
-                    <dd th:text="${product.prodPrice}"></dd>
+                    <dd th:text="${recipe.recipeCourse}"></dd>
                 </dl>
                 <form action="/delete">
-                    <input type="hidden" name="id" th:value="${product.id}" />
+                    <input type="hidden" name="id" th:value="${recipe.id}" />
                     <h2><input type="submit" class="btn btn-danger" value="Delete" onclick="return confirm('Are you sure?');" />
-                        <a th:href="@{'/edit/' + ${product.id}}" class="btn btn-warning">Edit</a></h2>
+                        <a th:href="@{'/edit/' + ${recipe.id}}" class="btn btn-warning">Edit</a></h2>
                 </form>
             </div>
         </div>
