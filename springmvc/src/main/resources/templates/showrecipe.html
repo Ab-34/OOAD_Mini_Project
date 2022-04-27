@@ -36,15 +36,16 @@
             </div>
         </div>
   
-        
-        <div layout:fragment="content" class="row">
+        <div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+        <div class="w3-content">
+        <!--<div layout:fragment="content" class="row">-->
             <div class="col-xs-8 col-md-8">
                 <br><br>
                 <h2 th:text="${recipe.recipeName}"></h2>
                 <h2><img th:src="${recipe.recipeImage}" width="200" /></h2>
                 
-                <a href="#" class="btn btn-light">Change Portion Size</a>
-                <a href="#" class="btn btn-light">Measurement Conversion</a>
+                <a href="#" class="btn btn-outline-light btn-sm">Change Portion Size</a>
+                <a href="#" class="btn btn-outline-light btn-sm">Measurement Conversion</a>
                 <dl class="list">
                     <dt>Recipe</dt>
                     <dd th:text="${recipe.recipeDesc}"></dd>
@@ -56,6 +57,7 @@
                     <h2><input type="submit" class="btn btn-danger" value="Delete" onclick="return confirm('Are you sure?');" />
                         <a th:href="@{'/edit/' + ${recipe.id}}" class="btn btn-warning">Edit</a></h2>
                 </form>
+                </div>
             </div>
         </div>
     </body>
