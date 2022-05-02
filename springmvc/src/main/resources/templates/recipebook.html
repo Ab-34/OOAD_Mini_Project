@@ -43,12 +43,17 @@
                 <br><br>
                 <h2 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h2>
                 <div class="table-responsive">
+                    <a href="/create" class="w3-bar-item w3-button">Add Recipe</a>
                     <table class="table" id="recipe-table">
                         <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Recipe</th>
                                 <th>Course</th>
+<!--                                <th>Ingredients</th>
+                                <th>Quantity</th>-->
+
+
                             </tr>
                         </thead>
                         <tbody>
@@ -56,6 +61,8 @@
                                 <td><a th:text="${recipe.recipeName}" th:href="@{'/showrecipe/' + ${recipe.id}}"></a></td>
                                 <td th:text="${recipe.recipeDesc}"></td>
                                 <td th:text="${recipe.recipeCourse}"></td>
+<!--                                <td th:text="${recipe.ing}"></td>
+                                <td th:text="${recipe.quant}"></td>-->
                             </tr>
                         </tbody>
                     </table>

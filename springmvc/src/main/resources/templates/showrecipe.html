@@ -26,6 +26,86 @@
         </style>
     </head>
     <body>
+        
+    <script>
+    function change_text(){
+        var newp = document.getElementById("numberInput").value;
+        var prepp = document.getElementById("prev").innerHTML;
+//        var t="[[${recipe.quantprint}]]";
+        var t=document.getElementById("quant").innerHTML;
+        var array = t.split(",");
+        var toprint ="";
+        for (i = 0; i < array.length; i++){
+            array[i]=array[i]*newp/prepp;
+            toprint=toprint+array[i]+",";
+        }
+        toprint=toprint.substr(0, toprint.length - 1);
+        document.getElementById("quant").innerHTML = toprint;
+        document.getElementById("prev").innerHTML = newp;
+    }
+    
+    function change_metric(){
+        var newp = document.getElementById("metricInput").value;
+        var prepp = document.getElementById("metric").innerHTML;
+        var t=document.getElementById("quant").innerHTML;
+        var array = t.split(",");
+        var toprint ="";
+        
+        switch(newp) {
+            case 'gram':
+              switch(prepp) {
+                    case 'gram':
+//                      toprint=toprint+t + ",";    
+                      break;
+                    case 'onuce':
+                        toprint=toprint+t + ",";
+                        for (i = 0; i < array.length; i++){
+                            array[i]=array[i]*28.35;
+                            toprint=toprint+array[i]+",";
+                        }
+                      // code block
+                      break;
+                    default:
+                        
+                        break;
+              // code block
+              }
+              
+              break;
+            case 'onuce':
+                case 'gram':
+              switch(prepp) {
+                    case 'gram':
+                      toprint=toprint+t + ",";
+                      for (i = 0; i < array.length; i++){
+                            array[i]=array[i]/28.35;
+                            toprint=toprint+array[i]+",";
+                        }      
+                      break;
+                    case 'onuce':
+//                        toprint=toprint+t + ",";
+                        
+                      // code block
+                      break;
+                    default:
+                        
+                        break;
+              // code block
+              }
+              // code block
+              break;
+            default:
+                
+                break;
+              // code block
+          }
+
+        
+        toprint=toprint.substr(0, toprint.length - 1);
+        document.getElementById("quant").innerHTML = toprint;
+        document.getElementById("metric").innerHTML = newp;
+    }
+    </script>
         <!-- Navbar (sit on top) -->
         <div class="w3-top w3-hide-small" id="topnav">
             <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
@@ -44,13 +124,31 @@
                 <h2 th:text="${recipe.recipeName}"></h2>
                 <h2><img th:src="${recipe.recipeImage}" width="200" /></h2>
                 
-                <a href="#" class="btn btn-outline-light btn-sm">Change Portion Size</a>
-                <a href="#" class="btn btn-outline-light btn-sm">Measurement Conversion</a>
+                <input type="number" name="numberInput" id="numberInput" max="20" min="1" step="1">
+                <button class="btn btn-outline-light btn-sm" onclick="change_text()">Change Portion</button>
+                
+                <label for="metricInput">Choose a Metric:</label>
+                        <select id="metricInput" name="metricInput">
+                          <option value="gram">Grams</option>
+                          <option value="ounce">Ounces</option>
+                        </select>
+                <!--<input type="number" name="metricInput" id="metricInput" max="20" min="1" step="1">-->
+                <button class="btn btn-outline-light btn-sm" onclick="change_metric()">Change Metric</button>
+                
                 <dl class="list">
+                    <dt>Ingredients</dt>
+                    <dd id="demo" th:text="${recipe.getIng()}" ></dd>
+                    <dt >Quantity</dt>
+                    <dd id = "quant" th:text="${recipe.getQuant()}"></dd>
+                    <dt>Portion</dt>
+                    <dd id = "prev" th:text="${recipe.portionsize}"></dd>
+                    <dt>Metric</dt>
+                    <dd id = "metric" th:text="${recipe.metric}"></dd>
                     <dt>Recipe</dt>
                     <dd th:text="${recipe.recipeDesc}"></dd>
                     <dt>Course</dt>
                     <dd th:text="${recipe.recipeCourse}"></dd>
+                    
                 </dl>
                 <form action="/delete">
                     <input type="hidden" name="id" th:value="${recipe.id}" />

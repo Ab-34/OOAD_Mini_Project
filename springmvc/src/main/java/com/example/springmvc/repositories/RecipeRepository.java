@@ -7,6 +7,10 @@ package com.example.springmvc.repositories;
 import com.example.springmvc.models.Recipe;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.ArrayList;
+
+import java.util.List;
+import java.util.Arrays;
 /**
  *
  * @author Abhijnya Bhat

@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.ArrayList;
 
+import java.util.List;
+import java.util.Arrays;
+
 @Entity
 public class Recipe {
     
@@ -19,22 +22,32 @@ public class Recipe {
 
     private String recipeImage;
     
-    private ArrayList<String> ing;
+    public int portionsize;
     
-    private ArrayList<Integer> quant;
+    public String[] inglist;
+    
+    public String ingprint;
+
+    public float[] quantlist;
+    
+    public String quantprint;
 
     private String recipeCourse;
+    
+    public String metric;
 
     public Recipe() {
     }
 
-    public Recipe(String recipeName, String recipeDesc, String recipeImage, String course, ArrayList<String> ing,  ArrayList<Integer> quant) {
+    public Recipe(String metric, int portionsize, String recipeName, String recipeDesc, String recipeImage, String course, String ingprint, String quantprint) {
         this.recipeName = recipeName;
         this.recipeDesc = recipeDesc;
         this.recipeImage = recipeImage;
         this.recipeCourse = course;
-        this.ing=ing;
-        this.quant=quant;
+        this.ingprint=ingprint;
+        this.quantprint=quantprint;
+        this.portionsize = portionsize;
+        this.metric=metric;
     }
 
     public Long getId() {
@@ -76,4 +89,61 @@ public class Recipe {
     public void setRecipeCourse(String recipeCourse) {
         this.recipeCourse = recipeCourse;
     }
+    
+    public void setPortionSize(int portionsize){
+        this.portionsize=portionsize;
+    }
+    
+    public int getPortionSize(){
+        return this.portionsize;
+    }
+    
+    public String getMetric() {
+        return this.metric;
+    }
+
+    public void setMetric(String metric) {
+        this.metric = metric;
+    }
+    
+    public void setIng(String ing) {
+        this.ingprint=ing;
+        String str[] = ing.split(",");
+        String[] al = new String[str.length];
+        for (int i = 0; i < str.length; i++) {
+            al[i]=str[i];
+        }
+        this.inglist = al;
+
+    }
+    public void setQuant(String ing) {
+        this.quantprint = ing;
+        String str[] = ing.split(",");
+        float[] al = new float[str.length];
+        for (int i = 0; i < str.length; i++) {
+            al[i]=Integer.parseInt(str[i]);
+        }
+        this.quantlist = al;
+
+    }
+    
+    public String getIng(){
+//        String ingredients ="";
+//        for(int i=0;i<this.inglist.length;i++){
+//            ingredients+=((this.inglist[i])+",");
+//            
+//        }
+        return this.ingprint;
+    }
+
+    public String getQuant(){
+//        String ingredients ="";
+//        for(int i=0;i<this.quantlist.length;i++){
+//            ingredients+=(Integer.toString(this.quantlist[i])+",");
+//            
+//        }
+        return this.quantprint;
+    }
+    
+    
 }

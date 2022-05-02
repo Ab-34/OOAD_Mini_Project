@@ -8,6 +8,17 @@
         <title>Create Food Item</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <style>
+                body, html {height: 100%}
+                #topnav, h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+                .menu {display: none}
+                .bgimg {
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-image: url("backgroundcook.jpg");
+                  min-height: 90%;
+                }
+            </style>
     </head>
     <body>
         <!-- Navbar (sit on top) -->
@@ -36,11 +47,32 @@
                         <textarea class="form-control" name="recipeDesc" cols="60" rows="3"></textarea>
                     </div>
                     <div class="form-group">
+                        <label for="email">Ingredients:</label>
+                        <textarea class="form-control" name="ing" cols="60" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Quantity:</label>
+                        <textarea class="form-control" name="quant" cols="60" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
                         <label for="email">Course:</label>
                         <input typeZ="text" class="form-control" name="recipeCourse" />
                     </div>
+                    
+                        <label for="metric">Choose a Metric:</label>
+                        <select id="metric" name="metric">
+                          <option value="gram">Grams</option>
+                          <option value="ounce">Ounces</option>
+                        </select>
+                       
+                    
+                    <div class="form-group">
+                        <label for="email">Portion Size:</label>
+                        <input typeZ="number" class="form-control" name="portionsize" />
+                    </div>
                     <div class="form-group">
                         <label for="email">Provide the food image URL here :</label>
+                        <!--<textarea class="form-control" name="recipeImage" cols="60" rows="3"></textarea>-->
                         <input type="url" class="form-control" name="recipeImage" />
                     </div>
                     <button type="submit" class="btn btn-success">Save Entry</button>

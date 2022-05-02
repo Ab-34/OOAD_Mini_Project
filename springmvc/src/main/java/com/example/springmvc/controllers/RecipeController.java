@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.example.springmvc.repositories.RecipeRepository;
 
+
 @Controller
 public class RecipeController {
     
@@ -32,12 +33,17 @@ public class RecipeController {
     }
 
     @RequestMapping("/save")
-    public String save(@RequestParam String recipeName, @RequestParam String recipeDesc, @RequestParam String recipeCourse, @RequestParam String recipeImage) {
+    public String save(@RequestParam String metric, @RequestParam int portionsize, @RequestParam String recipeName, @RequestParam String recipeDesc, @RequestParam String ing, @RequestParam String quant, @RequestParam String recipeCourse, @RequestParam String recipeImage) {
         Recipe recipe = new Recipe();
         recipe.setRecipeName(recipeName);
         recipe.setRecipeDesc(recipeDesc);
         recipe.setRecipeImage(recipeImage);
         recipe.setRecipeCourse(recipeCourse);
+        recipe.setIng(ing);
+        recipe.setQuant(quant);
+        recipe.setPortionSize(portionsize);
+        recipe.setMetric(metric);
+
         recipeRepository.save(recipe);
 
         return "redirect:/showrecipe/" + recipe.getId();
@@ -64,12 +70,16 @@ public class RecipeController {
     }
 
     @RequestMapping("/update")
-    public String update(@RequestParam Long id, @RequestParam String recipeName, @RequestParam String recipeDesc, @RequestParam String recipeCourse, @RequestParam String recipeImage) {
+    public String update(@RequestParam String metric, @RequestParam int portionsize, @RequestParam Long id, @RequestParam String recipeName, @RequestParam String recipeDesc, @RequestParam String ing, @RequestParam String quant, @RequestParam String recipeCourse, @RequestParam String recipeImage) {
         Recipe recipe = recipeRepository.findById(id).orElse(null);
         recipe.setRecipeName(recipeName);
         recipe.setRecipeDesc(recipeDesc);
         recipe.setRecipeImage(recipeImage);
         recipe.setRecipeCourse(recipeCourse);
+        recipe.setIng(ing);
+        recipe.setQuant(quant);
+        recipe.setMetric(metric);
+        recipe.setPortionSize(portionsize);
         recipeRepository.save(recipe);
 
         return "redirect:/showrecipe/" + recipe.getId();
