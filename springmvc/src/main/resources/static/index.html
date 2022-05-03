@@ -290,11 +290,6 @@ h1 {
   text-align: center;
   font-family: ;
 }
-
-
-  
-  
-  
 }
 .topnav-right {
   float: right;
@@ -410,7 +405,8 @@ body {
 .dropdown-content a:hover {
   background-color: rgb(74, 69, 69);
 }
-
+h2 span { background-color: black;}
+p span { background-color: black;}
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -420,21 +416,13 @@ body {
   <button class="button open-button" onclick="openForm()">Login</button>
   <div class="topnav" style="position:static;">
     <a href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#about">About</a>
+  
+    <a onclick="scrollWin()" href="#about">About</a>
     <a href="#contactus">Contact us</a>
-    <input type="text" placeholder="Search for recipes..">
-    <div class="dropdown">
-      <button class="dropbtn">Recipes
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="#">All recipes</a>
-        <a href="/recipebook">Recipebook</a>
-        <a href="#">Surprise me</a>
-      </div>
-    </div> 
-    <a href="#about" {style:alignment:right}>About</a>
+    <a href="/recipebook">Recipebook</a>
+    
+    
+   
   </div>
     <h1>CHEF'S PORTAL</h1>
     <div class="container">
@@ -495,6 +483,25 @@ body {
 </div> </div>
 </div>
 <h3 style="position: relative; margin-left: 25px; margin-top:-285px; color:white;">Trending this week</h3>
+<h2 style="font-weight:bold; color:white; margin-top:300px; margin-left:600px;""><span>About</span></h2>
+<p style="font-weight:bold;text-align:center; color:white; margin-top:50px; font-size:20px; margin-left: 180px;margin-right: 180px; background-color: rgb(0, 0, 0);">An app that makes cooking a hassle free enjoyable process. Aimed at professional and home
+  chefs with passion for cooking, who would like to store their recipes someplace safely, expand
+  their cooking knowledge. This app will also simplify conversions of measurements for
+  ingredients and make it hassle-free. Users can change the quantity of their recipe’s ingredients
+  based on the portion size, flexibly.
+  Recipes can be uploaded easily, with pictures and other flairs. A secure personal cookbook
+  feature will be provided. Other users’ public recipes can be bookmarked for further reference,
+  and be accessed from each user’s personal bookmarks section.</p>
+      <p style="color:white;margin-left: 180px;"><strong><span>Made with Love by:</span></strong></p>
+      <p style="color:white;margin-left: 180px;"><span>Abhijnya Bhat</span><br>
+        <span>Aditi Killedar</span><br>
+        <span>Aishwarya R</span>
+      </p>
+      <script>
+        function scrollWin() {
+          window.scrollTo(0, 1200);
+        }
+        </script>
 </main>
 </body>
 </html>
