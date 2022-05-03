@@ -8,6 +8,25 @@ import java.util.ArrayList;
 
 import java.util.List;
 import java.util.Arrays;
+import java.util.*;
+
+
+
+class dictionary {
+
+    Dictionary geek = new Hashtable();
+
+    dictionary() {
+
+        this.geek.put("flour", "3.64");
+        this.geek.put("sugar", "3.87");
+    }
+
+    public Dictionary getDict() {
+        return geek;
+    }
+
+}
 
 @Entity
 public class Recipe {
@@ -35,6 +54,8 @@ public class Recipe {
     private String recipeCourse;
     
     public String metric;
+    
+    public float cal;
 
     public Recipe() {
     }
@@ -143,6 +164,35 @@ public class Recipe {
 //            
 //        }
         return this.quantprint;
+    }
+    
+    public void setCal() {
+        dictionary d = new dictionary();
+        Dictionary geek = d.getDict();
+//        this.cal=Float.parseFloat((String)geek.get("flour"));
+        float tot = 0;
+        double factor=1.0;
+        
+        if (this.metric=="ounce"){
+            factor=0.035274;
+        }
+        
+        
+        for (int i = 0; i < quantlist.length; i++) {
+            try{
+                float cal = Float.parseFloat((String)(geek.get(this.inglist[i])));
+            tot += quantlist[i] * (cal*factor);
+            }
+            catch (Exception e){
+               
+            }            
+        }
+        
+        this.cal=tot;
+    }
+    
+    public float getCal(){
+        return this.cal;
     }
     
     

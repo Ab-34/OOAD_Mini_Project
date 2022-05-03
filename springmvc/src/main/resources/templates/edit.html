@@ -45,18 +45,13 @@
                 <h2>Edit Food</h2>
                 <form action="/update">
                     <div class="form-group">
-                        <label for="email">Name of the food:</label>
-                        <input type="text" class="form-control" name="recipeName" th:value="${recipe.recipeName}" />
+                        <label for="email">Name:</label>
+                        <input type="text" class="form-control" name="recipeName" />
                     </div>
                     <div class="form-group">
                         <label for="email">Recipe:</label>
-                        <textarea class="form-control" name="recipeDesc" cols="60" rows="3" th:text="${recipe.recipeDesc}"></textarea>
+                        <textarea class="form-control" name="recipeDesc" cols="60" rows="3"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Course:</label>
-                        <input type="text" class="form-control" name="recipeCourse" th:value="${recipe.recipePrice}" />
-                    </div>
-                    
                     <div class="form-group">
                         <label for="email">Ingredients:</label>
                         <textarea class="form-control" name="ing" cols="60" rows="3"></textarea>
@@ -64,10 +59,26 @@
                     <div class="form-group">
                         <label for="email">Quantity:</label>
                         <textarea class="form-control" name="quant" cols="60" rows="3"></textarea>
-                    </div><!-- comment -->
+                    </div>
                     <div class="form-group">
-                        <label for="email">Provide the URL of image of food:</label>
-                        <input type="url" class="form-control" name="recipeImage" th:value="${recipe.recipeImage}" />
+                        <label for="email">Course:</label>
+                        <input typeZ="text" class="form-control" name="recipeCourse" />
+                    </div>
+                    
+                        <label for="metric">Choose a Metric:</label>
+                        <select id="metric" name="metric">
+                          <option value="gram">Grams</option>
+                          <option value="ounce">Ounces</option>
+                        </select>
+                       
+                    
+                    <div class="form-group">
+                        <label for="email">Portion Size:</label>
+                        <input typeZ="number" class="form-control" name="portionsize" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Provide the food image URL here :</label>
+                        <input type="url" class="form-control" name="recipeImage" />
                     </div>
                     <input type="hidden" name="id" th:value="${recipe.id}" />
                     <button type="submit" class="btn btn-success">Save Entry</button>

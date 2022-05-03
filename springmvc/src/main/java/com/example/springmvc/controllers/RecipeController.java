@@ -43,6 +43,7 @@ public class RecipeController {
         recipe.setQuant(quant);
         recipe.setPortionSize(portionsize);
         recipe.setMetric(metric);
+        recipe.setCal();
 
         recipeRepository.save(recipe);
 
@@ -80,6 +81,8 @@ public class RecipeController {
         recipe.setQuant(quant);
         recipe.setMetric(metric);
         recipe.setPortionSize(portionsize);
+        recipe.setCal();
+
         recipeRepository.save(recipe);
 
         return "redirect:/showrecipe/" + recipe.getId();

@@ -45,65 +45,39 @@
     }
     
     function change_metric(){
-        var newp = document.getElementById("metricInput").value;
-        var prepp = document.getElementById("metric").innerHTML;
+        var newm = document.getElementById("metricInput").value;
+        var prevm = document.getElementById("metric").innerHTML;
         var t=document.getElementById("quant").innerHTML;
         var array = t.split(",");
-        var toprint ="";
-        
-        switch(newp) {
-            case 'gram':
-              switch(prepp) {
-                    case 'gram':
-//                      toprint=toprint+t + ",";    
-                      break;
-                    case 'onuce':
-                        toprint=toprint+t + ",";
-                        for (i = 0; i < array.length; i++){
-                            array[i]=array[i]*28.35;
-                            toprint=toprint+array[i]+",";
-                        }
-                      // code block
-                      break;
-                    default:
-                        
-                        break;
-              // code block
-              }
-              
-              break;
-            case 'onuce':
-                case 'gram':
-              switch(prepp) {
-                    case 'gram':
-                      toprint=toprint+t + ",";
-                      for (i = 0; i < array.length; i++){
-                            array[i]=array[i]/28.35;
-                            toprint=toprint+array[i]+",";
-                        }      
-                      break;
-                    case 'onuce':
-//                        toprint=toprint+t + ",";
-                        
-                      // code block
-                      break;
-                    default:
-                        
-                        break;
-              // code block
-              }
-              // code block
-              break;
-            default:
-                
-                break;
-              // code block
-          }
+        var toprint = "";
+        if (newm===prevm){
+            return;
+        }
+        else if (newm==="ounce" && prevm ==="gram"){
+            for (i = 0; i < array.length; i++){
+                array[i]=array[i]*28.35;
+                toprint=toprint+array[i]+",";
+            }
+        }
+            
+        else if (newm==="gram" && prevm ==="ounce"){
+            for (i = 0; i < array.length; i++){
+                array[i]=array[i]/28.35;
+                toprint=toprint+array[i]+",";
+            } 
 
+        }
         
+        else {
+            return;
+        }
         toprint=toprint.substr(0, toprint.length - 1);
         document.getElementById("quant").innerHTML = toprint;
-        document.getElementById("metric").innerHTML = newp;
+        document.getElementById("metric").innerHTML = newm;
+
+
+        
+
     }
     </script>
         <!-- Navbar (sit on top) -->
@@ -148,6 +122,8 @@
                     <dd th:text="${recipe.recipeDesc}"></dd>
                     <dt>Course</dt>
                     <dd th:text="${recipe.recipeCourse}"></dd>
+                    <dt>Calories</dt>
+                    <dd th:text="${recipe.cal}"></dd>
                     
                 </dl>
                 <form action="/delete">
