@@ -6,15 +6,14 @@ package com.example.springmvc.repositories;
 
 import com.example.springmvc.models.Recipe;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-
-import java.util.List;
-import java.util.Arrays;
 /**
  *
  * @author Abhijnya Bhat
  */
+
+@Repository
 public interface RecipeRepository extends JpaRepository<Recipe,Long>{
     Recipe findByRecipeName(final String recipeName);
 }

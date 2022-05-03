@@ -4,10 +4,15 @@
  */
 package com.example.springmvc.repositories;
 
+import com.example.springmvc.models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  *
- * @author pes1ug19cs037
+ * @author aditi
  */
+@Repository
 public interface UserRepository extends JpaRepository<User,Long>{
-    User findByUserName(final String UserName);
+    User findByUserId(final String UserId);
 }
