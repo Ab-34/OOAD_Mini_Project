@@ -13,27 +13,61 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
         <style>
-        body, html {height: 100%}
-        #topnav, h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
-        .menu {display: none}
-        .bgimg {
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-image: url("backgroundcook.jpg");
-          min-height: 90%;
-        }
-        </style>    
-            
+                body, html {height: 100%}
+                #topnav, h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+                .menu {display: none}
+                .bgimg {
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-image: url("backgroundcook.jpg");
+                  min-height: 90%;
+                }
+                body {
+  background-image:url('backgroundcook.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+                .topnav {
+  margin-top: 25px;
+  overflow: hidden;
+  background-color: #333;
+  border:white;
+  color:white;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+            </style>
     </head>
     <body>
         <!-- Navbar (sit on top) -->
-        <div class="w3-top w3-hide-small" id="topnav">
-            <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-            <a href="/#" class="w3-bar-item w3-button">HOME</a>
-            <a href="/#about" class="w3-bar-item w3-button">ABOUT</a>
-            <a href="/recipebook" class="w3-bar-item w3-button">RECIPE BOOK</a>
+        <div >
+          <div class=" topnav" style=" margin-top:25px; position:relative; " id="myNavbar">
+            <a href="/#">HOME</a>
+            <a href="/#about">ABOUT</a>
+            <a href="/recipebook" >RECIPE BOOK</a>
 
-            </div>
+          </div>
         </div>
   
         <div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
