@@ -23,67 +23,107 @@
           background-image: url("back.jpg");
           min-height: 90%;
         }
+        body, html {height: 100%}
+                #topnav, h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+                .menu {display: none}
+                .bgimg {
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-image: url("backgroundcook.jpg");
+                  min-height: 90%;
+                }
+                body {
+  background-image:url('backgroundcook.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+                .topnav {
+  margin-top: 25px;
+  overflow: hidden;
+  background-color: #333;
+  border:white;
+  color:white;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
         </style>
     </head>
-    <body>
-        <!-- Navbar (sit on top) -->
-        <div class="w3-top w3-hide-small" id="navbar">
-            <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-            <a href="/#" class="w3-bar-item w3-button">HOME</a>
-            <a href="/#about" class="w3-bar-item w3-button">ABOUT</a>
-            <a href="/recipebook" class="w3-bar-item w3-button">RECIPE BOOK</a>
+    <div >
+        <div class=" topnav" style=" margin-top:25px; position:relative; " id="myNavbar">
+          <a href="/#">HOME</a>
+          <a href="/#about">ABOUT</a>
+          <a href="/recipebook" >RECIPE BOOK</a>
 
-            </div>
         </div>
-  
-        
-        <div layout:fragment="content" class="row">
-            <div class="col-xs-8 col-md-8">
-                <h3>
-                    <a href="/recipebook" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Foods</a>
-                </h3>
-                <h2>Edit Food</h2>
-                <form action="/update">
-                    <div class="form-group">
-                        <label for="email">Name:</label>
-                        <input type="text" class="form-control" name="recipeName" />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Recipe:</label>
-                        <textarea class="form-control" name="recipeDesc" cols="60" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Ingredients:</label>
-                        <textarea class="form-control" name="ing" cols="60" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Quantity:</label>
-                        <textarea class="form-control" name="quant" cols="60" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Course:</label>
-                        <input typeZ="text" class="form-control" name="recipeCourse" />
-                    </div>
-                    
-                        <label for="metric">Choose a Metric:</label>
-                        <select id="metric" name="metric">
-                          <option value="gram">Grams</option>
-                          <option value="ounce">Ounces</option>
-                        </select>
-                       
-                    
-                    <div class="form-group">
-                        <label for="email">Portion Size:</label>
-                        <input typeZ="number" class="form-control" name="portionsize" />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Provide the food image URL here :</label>
-                        <input type="url" class="form-control" name="recipeImage" />
-                    </div>
-                    <input type="hidden" name="id" th:value="${recipe.id}" />
-                    <button type="submit" class="btn btn-success">Save Entry</button>
-                </form>
-            </div>
-        </div>
+      </div>
+      
+      <div layout:fragment="content" class="row">
+          <div class="col-xs-8 col-md-8">
+              <h3>
+                  <a href="/recipebook" style="margin-top:25px;"class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Foods</a>
+              </h3>
+              <h2 style="margin-left:40px; color:white;"><span style="background-color: black;opacity:0.9;">Edit recipe</span></h2>
+              <form style="margin-left:80px;" action="/save">
+                  <div class="form-group"  >
+                      <label for="email"><span style="background-color: black;color:white; opacity:0.9;">Name:</span></label>
+                      <input type="text" style="background-color:rgb(83, 80, 87); color:white;" class="form-control" name="recipeName" />
+                  </div>
+                  <div class="form-group">
+                      <label for="email"><span style="background-color: black;opacity:0.9; color:white;">Recipe:</span></label>
+                      <textarea style="background-color:rgb(83, 80, 87); color:white;" class="form-control" name="recipeDesc" cols="60" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="email"><span style="background-color: black;opacity:0.9; color:white;">Ingredients:</span></label>
+                      <textarea style="background-color:rgb(83, 80, 87); color:white;"class="form-control" name="ing" cols="60" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="email"><span style="background-color: black;opacity:0.9; color:white;">Quantity:</span></label>
+                      <textarea style="background-color:rgb(83, 80, 87); color:white;"class="form-control" name="quant" cols="60" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="email"><span style="background-color: black;opacity:0.9; color:white;">Course:</span></label>
+                      <input typeZ="text" style="background-color:rgb(83, 80, 87); color:white;"class="form-control" name="recipeCourse" />
+                  </div>
+                  
+                      <label for="metric"><span style="background-color: black;opacity:0.9; color:white;">Choose a metric:</span></label>
+                      <select style="background-color:rgb(83, 80, 87); color:white;" id="metric" name="metric">
+                        <option value="gram">Grams</option>
+                        <option value="ounce">Ounces</option>
+                      </select>
+                     
+                  
+                  <div class="form-group">
+                      <label for="email"><span style="background-color: black;opacity:0.9; color:white;">Portion Size:</span></label>
+                      <input typeZ="number"style="background-color:rgb(83, 80, 87); color:white;" class="form-control" name="portionsize" />
+                  </div>
+                  <div class="form-group">
+                      <label for="email"><span style="background-color: black;opacity:0.9; color:white;">Provide the food image URL here :</span></label>
+                      <!--<textarea class="form-control" name="recipeImage" cols="60" rows="3"></textarea>-->
+                      <input type="url" style="background-color:rgb(83, 80, 87); color:white;" class="form-control" name="recipeImage" />
+                  </div>
+                  <button type="submit" class="btn btn-success">Save Entry</button>
+              </form>
+          </div>
+      </div>
     </body>
 </html>
